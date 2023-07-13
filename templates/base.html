@@ -1,0 +1,37 @@
+{% load static %}
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+    <!-- Add your CSS and JavaScript files here -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+<header>
+    <!-- Add your header content here -->
+    <h1>Your Website</h1>
+</header>
+
+<nav>
+    <!-- Add your navigation menu here -->
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/polling-units">Polling Units</a></li>
+        <li><a href="/results">Results</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- This is the content block that will be overridden by child templates -->
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <!-- Add your footer content here -->
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+</footer>
+</body>
+</html>

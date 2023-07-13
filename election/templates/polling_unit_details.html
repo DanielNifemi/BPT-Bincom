@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polling Unit Details</title>
+</head>
+<body>
+<h1>Polling Unit Details</h1>
+
+<h2>Polling Unit Information</h2>
+<p><strong>ID:</strong> {{ polling_unit.id }}</p>
+<p><strong>Name:</strong> {{ polling_unit.name }}</p>
+<p><strong>Ward:</strong> {{ polling_unit.ward.name }}</p>
+<p><strong>LGA:</strong> {{ polling_unit.lga.name }}</p>
+<p><strong>State:</strong> {{ polling_unit.state.name }}</p>
+
+<h2>Results</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Party</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for result in results %}
+        <tr>
+            <td>{{ result.party }}</td>
+            <td>{{ result.score }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

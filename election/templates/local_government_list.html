@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Government List</title>
+</head>
+<body>
+<h1>Local Government List</h1>
+
+<form id="localGovernmentForm">
+    <label for="localGovernmentSelect">Select Local Government:</label>
+    <select id="localGovernmentSelect" name="localGovernment">
+        <option value="">Select</option>
+        {% for local_government in local_governments %}
+            <option value="{{ local_government.id }}">{{ local_government.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    // Retrieve the selected local government ID on form submission
+    document.getElementById("localGovernmentForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        var selectedLocalGovernmentId = document.getElementById("localGovernmentSelect").value;
+        console.log("Selected Local Government ID:", selectedLocalGovernmentId);
+        // Perform further processing or send the selected ID to the server
+    });
+
+    // Retrieve the selected local government ID on select box change event
+    document.getElementById("localGovernmentSelect").addEventListener("change", function() {
+        var selectedLocalGovernmentId = this.value;
+        console.log("Selected Local Government ID:", selectedLocalGovernmentId);
+        // Perform further processing or send the selected ID to the server
+    });
+</script>
+</body>
+</html>

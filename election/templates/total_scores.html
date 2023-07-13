@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Scores</title>
+</head>
+<body>
+<h1>Total Scores</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Party</th>
+        <th>Total Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for score in total_scores %}
+        <tr>
+            <td>{{ score.party }}</td>
+            <td>{{ score.total_score }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
